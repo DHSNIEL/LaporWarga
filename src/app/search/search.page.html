@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<ion-searchbar (ionInput)="onSearchChange($event)" show-cancel-button="focus" placeholder="Cari Kejadian"></ion-searchbar>
+
+<ion-list>
+  <ion-item *ngFor="let kejadian of kejadians">
+    <h2>{{kejadian.judul}}</h2><br>
+    <p>{{kejadian.deskripsi}}</p><br>
+    <ion-button routerLink="/detail-laporan/{{kejadian.id}}" expand="block" fill="clear" shape="round">
+      Detail
+    </ion-button>
+  </ion-item>
+</ion-list>
+</ion-content>

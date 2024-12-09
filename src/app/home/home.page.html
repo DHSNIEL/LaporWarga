@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> M<ion-icon name="eye"></ion-icon>ta Warga </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button
+        (click)="logout()"
+        color="danger"
+        shape="round"
+        slot="primary"
+      >
+        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+        LOG OUT
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="has-header">
+    <ion-card *ngFor="let kejadian of kejadians">
+      <img
+        alt="kejadian.judul"
+        src="{{kejadian.gambar}}"
+        height="120px"
+      />
+      <ion-card-header>
+        <!-- <ion-card-subtitle>User Creator?</ion-card-subtitle> -->
+        <ion-card-title>{{ kejadian.judul }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item> {{kejadian.deskripsi}} </ion-item>
+        <ion-item>Pelapor: {{kejadian.username}} </ion-item>
+
+        <ion-button shape="round" fill="clear">
+          <ion-icon name="thumbs-up-sharp"></ion-icon>
+        </ion-button>
+        <ion-button shape="round" fill="clear">
+          <ion-icon name="thumbs-down-sharp"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear">
+          <ion-icon name="chatbox-ellipses"></ion-icon>
+          {{kejadian.komentarcount}}
+        </ion-button>
+
+        <ion-button routerLink="/detail-laporan/{{kejadian.id}}"
+          >Detail</ion-button
+        >
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/direct-tambah-laporan">
+      <ion-icon name="add-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

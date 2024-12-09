@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="container">
+    <ion-item>
+      <ion-input
+        label="Fullname"
+        labelPlacement="stacked"
+        placeholder="Fullname"
+        [(ngModel)]="fullname"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="Username"
+        labelPlacement="stacked"
+        placeholder="Username"
+        [(ngModel)]="username"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="Password"
+        labelPlacement="stacked"
+        placeholder="Password"
+        [(ngModel)]="password"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Url Foto Profil"
+        labelPlacement="stacked"
+        
+        [(ngModel)]="foto_profil"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-button (click)="register()" shape="round">
+        Register
+      </ion-button>
+    </ion-item>
+  </div>
+</ion-content>

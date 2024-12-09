@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-item>
+    <ion-input [(ngModel)]="username" class="primary-input" placeholder="Username" type="text">
+      <ion-icon name="person-circle-outline" slot="start"></ion-icon
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="password" placeholder="Password" type="password">
+      <ion-icon
+        name="lock-closed-outline"
+        color="white"
+        slot="start"
+      ></ion-icon>
+      <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+    </ion-input>
+  </ion-item>
+  <br />
+  <ion-button expand="block" (click)="login()"><p style="color: white">Login</p></ion-button>
+  <ion-button expand="block" fill="outline" routerLink="/register"><p style="color: white">Register</p></ion-button>
+</ion-content>

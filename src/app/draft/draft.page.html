@@ -1,0 +1,33 @@
+<!-- draft.page.html -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Draft Laporan Kejadian</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="full">
+    <ion-item *ngFor="let draft of drafts">
+      <ion-thumbnail slot="start">
+        <img [src]="draft.gambar" alt="{{draft.judul}}" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ draft.judul }}</h2>
+        <p>{{ draft.deskripsi }}</p>
+        <p>Tujuan Instansi: {{ draft.tujuan_instansi }}</p>
+        <p>Tanggal: {{ draft.tanggal }}</p>
+        <p>Pembuat: {{ draft.pembuat }}</p>
+      </ion-label>
+      <ion-button (click)="publishDraft(draft)" color="success" slot="end">
+        Publish
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/tambah-draft">
+      <ion-icon name="add-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

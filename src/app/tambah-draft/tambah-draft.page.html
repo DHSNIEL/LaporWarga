@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Tambah Draft Laporan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div id="container">
+    <ion-item>
+      <ion-input
+      [(ngModel)]="judul"
+        label="Judul"
+        labelPlacement="floating"
+        placeholder="Judul"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea
+      [(ngModel)]="deskripsi"
+        label="Deskripsi"
+        labelPlacement="floating"
+        placeholder="Deskripsi"
+      ></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+      [(ngModel)]="gambar"
+        labelPlacement="floating"
+        placeholder="Link Gambar"
+        label="Gambar"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-select
+      [(ngModel)]="tujuan_instansi"
+        label="Pilih Instansi Tujuan"
+        label-placement="floating"
+        fill="outline"
+        expand="block"
+      >
+        <ion-select-option value="Pemkot">Pemkot</ion-select-option>
+        <ion-select-option value="PLN">PLN</ion-select-option>
+        <ion-select-option value="PDAM">PDAM</ion-select-option>
+        <ion-select-option value="Polisi">Polisi</ion-select-option>
+        <ion-select-option value="Tidak tahu">Tidak tahu</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-datetime-button label="Pilih Tanggal" datetime="datetime"></ion-datetime-button>
+
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime [(ngModel)]="tanggal" id="datetime"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+
+    <ion-button (click)="simpan()" expand="block">Laporkan Kejadian</ion-button>
+  </div>
+</ion-content>

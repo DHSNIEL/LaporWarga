@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Detail Laporan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <img src="{{kejadian.gambar}}" alt="">
+    <ion-card-header>
+      <ion-card-title>{{kejadian.judul}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>Pelapor: {{kejadian.username}} </ion-item>
+        <ion-item>{{kejadian.deskripsi}}</ion-item>
+      </ion-list>
+      <ion-label>Komentar: </ion-label>
+      <ion-input [(ngModel)]="komentar"></ion-input>
+      <ion-button (click)="komentarLaporan()">Komentar</ion-button>
+      <ul>
+        <li *ngFor="let komentar of kejadian.komentars">
+          {{komentar.username}}: 
+          {{komentar.komentar}}
+        </li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

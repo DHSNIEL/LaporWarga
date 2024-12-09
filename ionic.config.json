@@ -1,0 +1,7 @@
+{
+  "name": "speedRun",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
